@@ -12,10 +12,12 @@
         	<p>Пишу свой первый сайт, изучая новый язык программирования Python.</p>
         </div>
 
+        {% for post in posts %}
         <div>
-        	<p>опубликовано: 28.12.2015 13:19</p>
-        	<h2><a href="">Вторая запись</a></h2>
-        	<p>А как насчет того, что бы не работать 31го?</p>
+        	<p>Опубликованно: {{ post.published_date }}</p>
+        	<h1><a href="">{{ post.title }}</a></h1>   
+            <p>{{ post.text|linebreaks }}</p>
         </div>
+        {% endfor %}
     </body>    
 </html>
